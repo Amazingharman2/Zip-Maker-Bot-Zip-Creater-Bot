@@ -23,12 +23,12 @@ class RoxyBotConfig:
     """Configuration class for Roxy Zip Maker Bot"""
     
     # Bot Configuration
-    ROXYBOT_API_ID = int(os.environ.get("API_ID", "0"))
-    ROXYBOT_API_HASH = os.environ.get("API_HASH", "")
-    ROXYBOT_BOT_TOKEN = os.environ.get("BOT_TOKEN", "")
+    ROXYBOT_API_ID = int(os.environ.get("API_ID", "22413321"))
+    ROXYBOT_API_HASH = os.environ.get("API_HASH", "19dc6a4da93120d1af60afd778559d55")
+    ROXYBOT_BOT_TOKEN = os.environ.get("BOT_TOKEN", "8198959818:AAEvZVr3c7bBHf9qbxHE7akRjEwgq9JoJ8c")
     
     # MongoDB Configuration
-    ROXYBOT_MONGODB_URI = os.environ.get("MONGODB_URI", "")
+    ROXYBOT_MONGODB_URI = os.environ.get("MONGODB_URI", "mongodb+srv://Harmabxhbs:Harmabxhbs@cluster1000.kakktkc.mongodb.net/?retryWrites=true&w=majority&appName=Cluster1000")
     ROXYBOT_DATABASE_NAME = os.environ.get("DATABASE_NAME", "roxyzipmakerbotdb")
     
     # Flask Configuration
@@ -36,29 +36,29 @@ class RoxyBotConfig:
     ROXYBOT_FLASK_HOST = os.environ.get("HOST", "0.0.0.0")
     
     # Bot Settings
-    ROXYBOT_OWNER_ID = int(os.environ.get("OWNER_ID", "0"))
-    ROXYBOT_LOG_CHANNEL = int(os.environ.get("LOG_CHANNEL", "0"))
+    ROXYBOT_OWNER_ID = int(os.environ.get("OWNER_ID", "2052400282"))
+    ROXYBOT_LOG_CHANNEL = int(os.environ.get("LOG_CHANNEL", "-1002820046126"))
     
     # Admin IDs (space or comma separated for multiple admins)
     @staticmethod
     def roxybot_get_admin_ids():
         """Get list of admin IDs from environment variable"""
-        admin_str = os.environ.get("ADMIN_IDS", "")
+        admin_str = os.environ.get("ADMIN_IDS", "2052400282")
         if not admin_str:
             # Fallback to OWNER_ID if ADMIN_IDS not set
-            owner = os.environ.get("OWNER_ID", "0")
+            owner = os.environ.get("OWNER_ID", "2052400282")
             return [int(owner)] if owner != "0" else []
         # Split by space or comma
         admin_str = admin_str.replace(",", " ")
         return [int(x.strip()) for x in admin_str.split() if x.strip().isdigit()]
     
     # Force Subscribe Settings
-    ROXYBOT_FORCE_SUB_ENABLED = os.environ.get("FORCE_SUB_ENABLED", "false").lower() == "true"
+    ROXYBOT_FORCE_SUB_ENABLED = os.environ.get("FORCE_SUB_ENABLED", "true").lower() == "true"
     
     @staticmethod
     def roxybot_get_force_sub_channels():
         """Get list of force subscribe channel IDs (max 3)"""
-        channels_str = os.environ.get("FORCE_SUB_CHANNELS", "")
+        channels_str = os.environ.get("FORCE_SUB_CHANNELS", "-1002122486484")
         if not channels_str:
             return []
         # Split by space or comma
@@ -75,7 +75,7 @@ class RoxyBotConfig:
     ROXYBOT_ZIP_PATH = "zips"
     
     # Bot Info
-    ROXYBOT_CREATOR = "RoxyBasicNeedBot"
+    ROXYBOT_CREATOR = "Filestozippbot"
     ROXYBOT_VERSION = "1.0.0"
     
     @staticmethod
